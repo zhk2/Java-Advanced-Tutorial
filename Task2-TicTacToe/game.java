@@ -21,17 +21,35 @@ Input ( COLUMN # )
     - Check Column
     - Check Diagonal
  * 
- * 
+ * Scanner class first need to 
+ * Player 1 
  */
-
+import java.util.Scanner;
 
 
 
 class Game {
 
-    public void main (String[] args)
-    {
-        
+    public static void main (String[] args)
+     {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Input Row #");
+        int row = scanner.nextInt();
+        System.out.print("Input Column #");
+        int col = scanner.nextInt();
+        System.out.println(row + " " + col);
+
+        int[] array = {0,0,0,0,0};
+        array[row] = 2;
+        System.out.println(array[row]);
+
+
+         
+
+
     }
+
+
+        
 
 }
