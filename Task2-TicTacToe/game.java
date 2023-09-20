@@ -57,7 +57,16 @@ public class game {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        game game = new game();
+        System.out.println("Player 1, your move");
+        System.out.print("Enter row (0, 1, 2): ");
+        int row = scanner.nextInt();
+        System.out.print("Enter column (0, 1, 2): ");
+        int column = scanner.nextInt(); 
+        scanner.close();
+
+
+
+
 
        
     }
