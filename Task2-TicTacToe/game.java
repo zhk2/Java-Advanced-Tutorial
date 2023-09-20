@@ -23,19 +23,28 @@ Input ( COLUMN # )
     - Check Diagonal
  * 
  */
-public class game {
+class Game {
 
     int SIZE = 3;
     char[][] board = new char[SIZE][SIZE];
     char PLAYER1 = 'X';
     char PLAYER2 = 'O';
 
+
     //  to initialize the game board
-    public game() {
+    public Game() {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
                 board[i][j] = '-';  // Initializing each cell with '-'
             }
+        }
+    }
+    public void displayBoard(){
+        for (int i = 0; i < SIZE; i++){
+            for (int j = 0; j < SIZE; j++){
+                System.out.print(board[i][j]+ " ");
+            }
+            System.out.println(); 
         }
     }
 
@@ -57,6 +66,8 @@ public class game {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Game game = new Game(); 
+        game.displayBoard();
         System.out.println("Player 1, your move");
         System.out.print("Enter row (0, 1, 2): ");
         int row = scanner.nextInt();
