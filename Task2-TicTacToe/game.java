@@ -2,10 +2,26 @@ import java.util.Scanner;
 
 /**
  * TicTacToe Game.
+ # TASK : Make a game of Tic Tac Toe in Java using the terminal! Start with Player1 , who will place down an ‘X’ and then Player2 will place down an ‘O’. The player input will loop until a win condition is found.
+
+- **`do-while`** loop - ( for player input)
+- **`for`** loop - (iterating through array)
+- methods - (functions to make the game easier to understand)
+- multidimensional arrays - (store game data)
+- player id - (determine which icon to use for play)
+
+Input ( ROW # )
+
+Input ( COLUMN # )
+
+### Methods
+
+- SetCell( playerID , row , column )
+- Check Win()
+    - Check Row
+    - Check Column
+    - Check Diagonal
  * 
- * This game allows two players to play Tic Tac Toe in the terminal.
- * Player 1 uses 'X' and Player 2 uses 'O'.
- * The game loops until a win condition is met or the board is full.
  */
 public class game {
 
