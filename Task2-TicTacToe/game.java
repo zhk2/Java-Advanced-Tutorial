@@ -97,36 +97,41 @@ class Game {
         Scanner scanner = new Scanner(System.in);
         Game game = new Game(); 
         do {
-        game.displayBoard();
-        System.out.println("Player 1, your move");
-        System.out.print("Enter row (0, 1, 2): ");
-        int row = scanner.nextInt();
-        System.out.print("Enter column (0, 1, 2): ");
-        int column = scanner.nextInt(); 
-        game.setCell(game.PLAYER1, row, column);
-        
-        System.out.println("Player 2, your move");
-        System.out.print("Enter row (0, 1, 2): ");
-        int row2 = scanner.nextInt();
-        System.out.print("Enter column (0, 1, 2): ");
-        int column2 = scanner.nextInt();
-        
-        game.setCell(game.PLAYER2, row2, column2);
 
-        game.displayBoard();
 
-        System.out.println(game.checkWin(game.PLAYER1));
-        System.out.println(game.checkWin(game.PLAYER2));
+            game.displayBoard();
+            
+            // TODO:
+            // Option 1 : Create a new method to take in input from the scanner
+            //      - output true / false based on if valid cell is inputted
+
+            // Option 2 : Create a global 'currPlayer' variable and iterate after each input turn
+
+            //Player 1
+            System.out.println("Player 1, your move");
+            System.out.print("Enter row (0, 1, 2): ");
+            int row = scanner.nextInt();
+            System.out.print("Enter column (0, 1, 2): ");
+            int column = scanner.nextInt(); 
+            game.setCell(game.PLAYER1, row, column);
+            
+
+            // Player 2
+            System.out.println("Player 2, your move");
+            System.out.print("Enter row (0, 1, 2): ");
+            int row2 = scanner.nextInt();
+            System.out.print("Enter column (0, 1, 2): ");
+            int column2 = scanner.nextInt();
+            game.setCell(game.PLAYER2, row2, column2);
+
+
+            game.displayBoard();
+            System.out.println(game.checkWin(game.PLAYER1));
+            System.out.println(game.checkWin(game.PLAYER2));
 
         } while(!game.checkWin(game.PLAYER1) && !game.checkWin(game.PLAYER2)); 
 
 
         scanner.close();
-
-
-
-
-
-       
     }
 }
