@@ -63,6 +63,35 @@ class Game {
         }
         return false;  // Invalid move
     }
+    public boolean checkWin(char player) {
+        return checkRow(player) || checkColumn(player) || checkDiagonal(player);
+    }
+
+    public boolean checkRow(char player) {
+        for (int i = 0; i < SIZE; i++) {
+            if (board[i][0] == player && board[i][1] == player && board[i][2] == player) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean checkColumn(char player) {
+        for (int i = 0; i < SIZE; i++) {
+            if (board[0][i] == player && board[1][i] == player && board[2][i] == player) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean checkDiagonal(char player) {
+        if ((board[0][0] == player && board[1][1] == player && board[2][2] == player) || 
+            (board[0][2] == player && board[1][1] == player && board[2][0] == player)) {
+            return true;
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
