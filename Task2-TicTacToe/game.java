@@ -96,12 +96,31 @@ class Game {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Game game = new Game(); 
+        do {
         game.displayBoard();
         System.out.println("Player 1, your move");
         System.out.print("Enter row (0, 1, 2): ");
         int row = scanner.nextInt();
         System.out.print("Enter column (0, 1, 2): ");
         int column = scanner.nextInt(); 
+        game.setCell(game.PLAYER1, row, column);
+        
+        System.out.println("Player 2, your move");
+        System.out.print("Enter row (0, 1, 2): ");
+        int row2 = scanner.nextInt();
+        System.out.print("Enter column (0, 1, 2): ");
+        int column2 = scanner.nextInt();
+        
+        game.setCell(game.PLAYER2, row2, column2);
+
+        game.displayBoard();
+
+        System.out.println(game.checkWin(game.PLAYER1));
+        System.out.println(game.checkWin(game.PLAYER2));
+
+        } while(!game.checkWin(game.PLAYER1) && !game.checkWin(game.PLAYER2)); 
+
+
         scanner.close();
 
 
